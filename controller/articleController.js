@@ -17,13 +17,15 @@ exports.getArticles =async (req, res) => {
 exports.createArticle =async (req, res) => {
   // console.log(req.body)
   try{
-    const newArticle =await Article.create(req.body);
-    res.status(201).json({
-      status: "success",
-      data: {
-        article: newArticle,
-      },
-    });
+// use save
+const article=new Article(req.body)
+await article.save();
+res.status(201).json({
+  status: "success",
+  data: {
+    article,
+  },
+})
   }catch(err){
     res.status(400).json({
       status: "fail",
