@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction à React",
+    "description": "React est une bibliothèque JavaScript populaire pour construire des interfaces utilisateur. Dans cet article, nous explorons les bases de React, y compris les composants, les props et l'état.",
+    "slug": "introduction-a-react",
+    "category": "Développement Web"
+  },
+  {
+    "id": 2,
+    "title": "Les meilleures pratiques en CSS",
+    "description": "Découvrez les meilleures pratiques pour écrire du CSS maintenable et efficace. Nous couvrons des sujets comme BEM, les variables CSS, et les animations modernes.",
+    "slug": "meilleures-pratiques-css",
+    "category": "CSS"
+  },
+  {
+    "id": 3,
+    "title": "Guide complet de JavaScript ES6+",
+    "description": "JavaScript a évolué avec ES6 et les versions ultérieures. Ce guide couvre les fonctionnalités clés comme les arrow functions, les promesses, les modules, et bien plus encore.",
+    "slug": "guide-javascript-es6",
+    "category": "JavaScript"
+  },
+  {
+    "id": 4,
+    "title": "Créer des APIs avec Node.js",
+    "description": "Apprenez à créer des APIs RESTful avec Node.js et Express. Nous abordons la structure de projet, les routes, les middlewares, et la gestion des erreurs.",
+    "slug": "creer-apis-nodejs",
+    "category": "Backend"
+  },
+  {
+    "id": 5,
+    "title": "Débuter avec Git et GitHub",
+    "description": "Git est un outil essentiel pour tout développeur. Ce tutoriel vous guide à travers les commandes de base de Git et comment utiliser GitHub pour collaborer sur des projets.",
+    "slug": "debuter-git-github",
+    "category": "Outils"
+  },
+  {
+    "id": 6,
+    "title": "Comprendre les hooks en React",
+    "description": "Les hooks sont une fonctionnalité puissante de React pour gérer l'état et les effets dans les composants fonctionnels. Découvrez comment les utiliser efficacement.",
+    "slug": "comprendre-les-hooks-react",
+    "category": "Développement Web"
+  },
+  {
+    "id": 7,
+    "title": "Optimiser les performances en JavaScript",
+    "description": "Découvrez des techniques pour optimiser les performances de vos applications JavaScript, y compris le lazy loading, le debouncing, et le memoization.",
+    "slug": "optimiser-performances-javascript",
+    "category": "JavaScript"
+  },
+  {
+    "id": 8,
+    "title": "Introduction à TypeScript",
+    "description": "TypeScript est un sur-ensemble de JavaScript qui ajoute le typage statique. Apprenez les bases de TypeScript et comment l'utiliser dans vos projets.",
+    "slug": "introduction-typescript",
+    "category": "TypeScript"
+  },
+  {
+    "id": 9,
+    "title": "Créer des animations avec CSS",
+    "description": "Découvrez comment créer des animations fluides et performantes en utilisant CSS. Nous couvrons les keyframes, les transitions, et les bonnes pratiques.",
+    "slug": "creer-animations-css",
+    "category": "CSS"
+  },
+  {
+    "id": 10,
+    "title": "Gérer l'état avec Redux",
+    "description": "Redux est une bibliothèque de gestion d'état pour les applications JavaScript. Apprenez comment l'utiliser pour gérer l'état de vos applications React.",
+    "slug": "gerer-etat-avec-redux",
+    "category": "Développement Web"
+  },
+  {
+    "id": 11,
+    "title": "Déployer une application React",
+    "description": "Découvrez comment déployer une application React sur des plateformes comme Netlify, Vercel, ou AWS. Nous couvrons également la configuration de CI/CD.",
+    "slug": "deployer-application-react",
+    "category": "DevOps"
+  },
+  {
+    "id": 12,
+    "title": "Les bases de GraphQL",
+    "description": "GraphQL est un langage de requête pour les APIs. Apprenez les concepts de base de GraphQL et comment l'utiliser dans vos projets.",
+    "slug": "bases-graphql",
+    "category": "Backend"
+  },
+  {
+    "id": 13,
+    "title": "Créer un portfolio en ligne",
+    "description": "Découvrez comment créer un portfolio en ligne pour présenter vos projets et compétences. Nous utilisons React et Tailwind CSS pour ce projet.",
+    "slug": "creer-portfolio-en-ligne",
+    "category": "Développement Web"
+  },
+  {
+    "id": 14,
+    "title": "Les bonnes pratiques en SEO",
+    "description": "Le SEO est essentiel pour améliorer la visibilité de votre site web. Découvrez les meilleures pratiques pour optimiser votre site pour les moteurs de recherche.",
+    "slug": "bonnes-pratiques-seo",
+    "category": "SEO"
+  },
+  {
+    "id": 15,
+    "title": "Introduction à Docker",
+    "description": "Docker est un outil de conteneurisation qui simplifie le déploiement des applications. Apprenez les bases de Docker et comment l'utiliser dans vos projets.",
+    "slug": "introduction-docker",
+    "category": "DevOps"
+  },
+  {
+    "id": 16,
+    "title": "Créer un blog avec Next.js",
+    "description": "Next.js est un framework React qui facilite la création de blogs et de sites statiques. Découvrez comment créer un blog avec Next.js et Markdown.",
+    "slug": "creer-blog-nextjs",
+    "category": "Développement Web"
+  },
+  {
+    "id": 17,
+    "title": "Les bases de Firebase",
+    "description": "Firebase est une plateforme backend qui offre des services comme l'authentification, la base de données, et le stockage. Apprenez les bases de Firebase.",
+    "slug": "bases-firebase",
+    "category": "Backend"
+  },
+  {
+    "id": 18,
+    "title": "Créer des composants réutilisables en React",
+    "description": "Découvrez comment créer des composants React réutilisables pour améliorer la maintenabilité de vos applications.",
+    "slug": "creer-composants-reutilisables-react",
+    "category": "Développement Web"
+  },
+  {
+    "id": 19,
+    "title": "Les bases de Tailwind CSS",
+    "description": "Tailwind CSS est un framework CSS utilitaire-first. Apprenez les bases de Tailwind CSS et comment l'utiliser dans vos projets.",
+    "slug": "bases-tailwind-css",
+    "category": "CSS"
+  },
+  {
+    "id": 20,
+    "title": "Créer une API REST avec Express",
+    "description": "Découvrez comment créer une API RESTful avec Express, un framework Node.js. Nous couvrons les routes, les middlewares, et la gestion des erreurs.",
+    "slug": "creer-api-rest-express",
+    "category": "Backend"
+  }
+]
