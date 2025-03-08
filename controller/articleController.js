@@ -2,6 +2,18 @@ const fs = require("fs");
 const articles = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/articles.json`)
 );
+
+exports.checkId = (req, res, next,val) => {
+    console.log(val)
+  if (val > articles.length) {
+    return res.status(404).json({
+      status: "Fail",
+      message: "Invalid Id",
+    });
+  }
+  next();
+};
+
 exports.getArticles = (req, res) => {
   res.status(200).json({
     status: "sucess",
@@ -33,12 +45,7 @@ exports.createArticle = (req, res) => {
 exports.getArticle = (req, res) => {
   const id = req.params.id * 1;
   const articleId = articles.find((el) => el.id === id);
-  if (!articleId) {
-    res.status(400).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
+
   res.status(200).json({
     status: "success",
     results: articleId.length,
@@ -49,12 +56,6 @@ exports.getArticle = (req, res) => {
 };
 
 exports.updateArticle = (req, res) => {
-  if (req.params.id * 1 > articles.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
   res.status(200).json({
     status: "success",
     data: {
