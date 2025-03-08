@@ -1,78 +1,99 @@
-const fs = require("fs");
-const articles = JSON.parse(
-  fs.readFileSync(`${__dirname}/../dev-data/articles.json`)
-);
 
-exports.checkId = (req, res, next,val) => {
-    console.log(val)
-  if (val > articles.length) {
-    return res.status(404).json({
-      status: "Fail",
-      message: "Invalid Id",
-    });
-  }
-  next();
-};
+const Article = require("../models/articleModel");
 
-exports.getArticles = (req, res) => {
+
+
+exports.getArticles =async (req, res) => {
+  const articles=await Article.find();
   res.status(200).json({
-    status: "sucess",
-    length: articles.length,
+    status: "success",
+    results: articles.length,
     data: {
       articles,
     },
   });
 };
 
-exports.createArticle = (req, res) => {
+exports.createArticle =async (req, res) => {
   // console.log(req.body)
-  const newId = articles[articles.length - 1].id + 1;
-  const newArticle = Object.assign({ id: newId }, req.body);
-  articles.push(newArticle);
-  fs.writeFile(
-    `${__dirname}/dev-data/data/articles.json`,
-    JSON.stringify(articles),
-    (err) => {
-      res.status(201).json({
-        status: "success",
-        data: {
-          article: newArticle,
-        },
-      });
-    }
-  );
-};
-exports.getArticle = (req, res) => {
-  const id = req.params.id * 1;
-  const articleId = articles.find((el) => el.id === id);
-
-  res.status(200).json({
-    status: "success",
-    results: articleId.length,
-    data: {
-      articleId,
-    },
-  });
-};
-
-exports.updateArticle = (req, res) => {
-  res.status(200).json({
-    status: "success",
-    data: {
-      article: "<Updated tour here...",
-    },
-  });
-};
-
-exports.deleteArticle = (req, res) => {
-  if (req.params.id * 1 > articles.length) {
-    return res.status(404).json({
-      status: "Fail",
-      message: "Invalid Id",
+  try{
+    const newArticle =await Article.create(req.body);
+    res.status(201).json({
+      status: "success",
+      data: {
+        article: newArticle,
+      },
     });
+  }catch(err){
+    res.status(400).json({
+      status: "fail",
+      message: err
+    })
   }
-  res.status(204).json({
-    status: "Success",
-    data: null,
-  });
 };
+exports.getArticle =async (req, res) => {
+ try{
+  const article=await Article.findById(req.params.id);
+  if(!article){
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid Id"
+    })
+  }
+  res.status(200).json({
+    status: "success",
+    data: {
+      article,
+    },
+  })
+ }catch(err){
+  res.status(404).json({
+    status: "fail",
+    message: err
+  })
+ }
+};
+
+exports.updateArticle=async(req,res)=>{
+  try{
+    const article=await Article.findByIdAndUpdate(req.params.id,req.body,{new:true});
+    if(!article){
+      return res.status(404).json({
+        status: "fail",
+        message: "Invalid Id"
+      })
+    }
+    res.status(200).json({
+      status: "success",
+      data: {
+        article,
+      },
+    })
+  }catch(err){
+    res.status(404).json({
+      status: "fail",
+      message: err
+    })
+  } 
+}
+
+exports.deleteArticle=async(req,res)=>{
+  try{
+    const article=await Article.findByIdAndDelete(req.params.id);
+    if(!article){
+      return res.status(404).json({
+        status: "fail",
+        message: "Invalid Id"
+      })
+    }
+    res.status(204).json({
+      status: "success",
+      data: null,
+    })
+  }catch(err){
+    res.status(404).json({
+      status: "fail",
+      message: err
+    })
+  } 
+}

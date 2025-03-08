@@ -3,7 +3,6 @@ const { getArticles, createArticle, getArticle, deleteArticle, updateArticle, ch
 const router = express.Router();
 
 router.route("/").get(getArticles).post(createArticle);
-router.param("id",checkId)
 router
   .route("/:id")
   .get(getArticle)
